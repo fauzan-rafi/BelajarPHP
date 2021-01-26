@@ -1,13 +1,13 @@
 <?php
 
-$x = 20;
+$x = 70;
 
 if ( $x == 10) {
-      echo "benar";
+      echo "kondisi tersebut benar";
 }else {
-      echo "salah";
+      echo "kondisi tersebut salah";
 }
 
-echo "output terakhir";
+
 
 ?>
