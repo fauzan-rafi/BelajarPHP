@@ -12,6 +12,12 @@ $result = mysqli_query($connect,"SELECT * FROM barang");
       <title>TOKO</title>
 </head>
 <body>
+
+      <h1>Aplikasi pengelola barang</h1>
+
+      <a href="insert.php"> Insert Data</a>
+
+      <br>
       
       <table border="1">
             <tr>
@@ -21,6 +27,8 @@ $result = mysqli_query($connect,"SELECT * FROM barang");
                   <th>Jumlah Stok</th>
                   <th>Jenis</th>
                   <th>Status</th>
+                  <th>Foto</th>
+                  <th>Aksi</th>
             </tr>
             <?php $i = 1; ?>
             
@@ -32,6 +40,13 @@ $result = mysqli_query($connect,"SELECT * FROM barang");
                         <td><?= $data['jumlah'] ?></td>
                         <td><?= $data['jenis'] ?></td>
                         <td><?= $data['status'] ?></td>
+                        <td>
+                              <img src="img/<?= $data['foto'] ?>" alt="" width="100px" height="90px">
+                        </td>
+                        <td>
+                        <a href="delete.php?id=<?= $data['id']?>" onclick="return confirm('yakin dihapus?')">Hapus</a> |
+                        <a href="edit.php?id=<?= $data['id']?>"> Edit </a>
+                        </td>
                   </tr>
                   <?php $i++; ?>
             <?php } ?>
